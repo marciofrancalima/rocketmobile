@@ -1,9 +1,9 @@
 import React from 'react';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-import Header from './components/Header';
 import Main from './pages/Main';
 import Cart from './pages/Cart';
+import Header from './components/Header';
 
 import colors from './styles/colors';
 
