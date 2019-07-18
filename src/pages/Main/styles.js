@@ -65,3 +65,12 @@ export const AddButtonText = styled.Text`
   font-weight: bold;
   color: #fff;
 `;
+
+export const Loading = styled.ActivityIndicator.attrs({
+  size: 'large',
+  color: colors.primary,
+})`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
