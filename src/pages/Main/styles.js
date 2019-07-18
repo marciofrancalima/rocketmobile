@@ -6,6 +6,11 @@ export const Container = styled.View`
   background: ${colors.dark};
 `;
 
+export const ProductList = styled.FlatList.attrs({
+  showsHorizontalScrollIndicator: false,
+  horizontal: true,
+})``;
+
 export const Product = styled.View`
   background: #fff;
   padding: 10px;

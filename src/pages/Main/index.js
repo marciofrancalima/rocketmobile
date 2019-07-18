@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
   Container,
+  ProductList,
   Product,
   ProductImage,
   ProductTitle,
@@ -84,8 +84,7 @@ export default class Main extends Component {
 
     return (
       <Container>
-        <FlatList
-          horizontal
+        <ProductList
           data={products}
           extraData={this.props}
           keyExtractor={item => String(item.id)}
