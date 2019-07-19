@@ -4,8 +4,11 @@ import colors from '../../styles/colors';
 import logo from '../../assets/logo.png';
 
 export const Container = styled.View`
+  height: 50px;
+  background: #141419;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
 `;
 

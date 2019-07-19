@@ -7,9 +7,12 @@ export const Container = styled.View`
   background: #fff;
   border-radius: 4px;
   margin: 15px;
+  flex: 1;
 `;
 
-export const Products = styled.View``;
+export const Products = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})``;
 
 export const Product = styled.View``;
 
@@ -37,7 +40,7 @@ export const ProductPrice = styled.Text`
   margin-top: 5px;
 `;
 
-export const ProductDelete = styled.TouchableOpacity`
+export const ProductDeleteButton = styled.TouchableOpacity`
   padding: 6px;
 `;
 
@@ -70,7 +73,7 @@ export const ProductSubtotal = styled.Text`
 `;
 
 export const TotalContainer = styled.View`
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 export const TotalText = styled.Text`
@@ -103,6 +106,7 @@ export const OrderText = styled.Text`
 export const EmptyContainer = styled.View`
   align-items: center;
   justify-content: center;
+  flex: 1;
 `;
 
 export const EmptyText = styled.Text`
