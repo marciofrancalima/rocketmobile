@@ -34,7 +34,12 @@ class Main extends Component {
   getProducts = async () => {
     const response = await api.get('/products');
 
-    this.setState({ products: response.data, loading: false });
+    const data = response.data.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
+
+    this.setState({ products: data, loading: false });
   };
 
   renderProduct = ({ item }) => {
@@ -44,8 +49,8 @@ class Main extends Component {
       <Product key={item.id}>
         <ProductImage source={{ uri: item.image }} />
         <ProductTitle>{item.title}</ProductTitle>
-        <ProductPrice>{formatPrice(item.price)}</ProductPrice>
-        <AddButton onPress={() => this.handleAddProduct(item)}>
+        <ProductPrice>{item.priceFormatted}</ProductPrice>
+        <AddButton onPress={() => this.handleAddProduct(item.id)}>
           <ProductAmount>
             <Icon name="add-shopping-cart" color="#FFF" size={20} />
             <ProductAmountText>{amount[item.id] || 0}</ProductAmountText>
@@ -56,10 +61,12 @@ class Main extends Component {
     );
   };
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
 
-    addToCart(product);
+    addToCartRequest(id);
+
+    this.setState({ loading: false });
   };
 
   render() {
